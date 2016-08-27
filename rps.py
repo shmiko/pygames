@@ -43,7 +43,7 @@ def result(player,computer):
 	time.sleep(1)
 	print ("3!")
 	time.sleep(0.5)
-	print ("Computer threw {0}!").format(names[computer])
+	print ("Computer threw {0}!".format(names[computer]))
 	global player_score, computer_score
 	if player == computer:
 		print ("Tie game.")
