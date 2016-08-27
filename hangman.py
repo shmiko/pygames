@@ -19,7 +19,7 @@ def hangedman(hangman):
 	graphic = [
 	"""
 +-------------+
-|/      |
+     |/      |
      |      
      |      
      |       
@@ -129,13 +129,17 @@ def game():
 	dictionary = ["hat","capital","rainbow","penguin","house","snake"]
 	word = choice(dictionary)
 	word_length = len(word)
+	hint = choice(word)
 	clue = word_length * ["_"]
 	tries = 8
 	letters_tried = ""
 	guesses = 0
 	letters_right = 0
 	letters_wrong = 0
+	asked = 0
 	global computer_score, player_score
+	print ("Your word is ",word_length,"letters long!") 
+	print (" ".join(clue))
 
 	while (letters_wrong != tries) and ("".join(clue) != word):
 		letter = guess_letter()
@@ -147,18 +151,26 @@ def game():
 				first_index = word.find(letter)
 				if first_index == -1:
 					letters_wrong += 1
+					tries += 1
 					print ("Sorry,",letter,"isn’t what we’re looking for.")
 				else:
 					print ("Congratulations,",letter,"is correct.")
+					tries += 1
 					for i in range(word_length):
 						if letter == word[i]:
 							clue[i] = letter
 		else:
+			tries += 1
 			print ("Choose another.")
 
 		hangedman(letters_wrong)
 		print (" ".join(clue))
 		print ("Guesses: ", letters_tried)
+		if (len(letters_tried) == 3) and (asked == 0):
+			ask = input("Do you want a hint: y/n")
+			if ask:
+				print ("Your hint is letter ", hint)
+				asked = 1
 
 		if letters_wrong == tries:
 			print ("Game Over.")
