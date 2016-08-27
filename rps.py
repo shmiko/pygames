@@ -65,8 +65,8 @@ def play_again():
 def scores():
 	global player_score, computer_score
 	print ("HIGH SCORES")
-	print ("Player: "), player_score
-	print ("Computer: "), computer_score
+	print ("Player: ", player_score)
+	print ("Computer: ", computer_score)
 
 if __name__ == '__main__':
 	start()
