@@ -27,7 +27,7 @@ def game():
 def move():
 	while True:
 		print ()
-		player = raw_input("Rock = 1\nPaper = 2\nScissors = 3\nMake a move: ")
+		player = input("Rock = 1\nPaper = 2\nScissors = 3\nMake a move: ")
 		try:
 			player = int(player)
 			if player in (1,2,3):
@@ -56,7 +56,7 @@ def result(player,computer):
 			computer_score += 1
 
 def play_again():
-	answer = raw_input("Would you like to play again? y/n: ")
+	answer = input("Would you like to play again? y/n: ")
 	if answer in ("y", "Y", "yes", "Yes", "Of course"):
 		return answer
 	else:
