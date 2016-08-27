@@ -169,8 +169,8 @@ def game():
 		if (len(letters_tried) == 3) and (asked == 0):
 			ask = input("Do you want a hint: y/n")
 			if ask:
-				print ("Your hint is letter ", hint)
 				asked = 1
+				print ("Your hint is letter ", hint)
 
 		if letters_wrong == tries:
 			print ("Game Over.")
