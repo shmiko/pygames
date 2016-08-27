@@ -18,8 +18,8 @@ computer_score = 0
 def hangedman(hangman):
 	graphic = [
 	"""
-	+-------------+
-	 |/      |
++-------------+
+|/      |
      |      
      |      
      |       
@@ -30,7 +30,7 @@ def hangedman(hangman):
     ,
     """
     +-------------+
-	 |/      |
+     |/      |
      |      (_)
      |      
      |       
@@ -41,7 +41,7 @@ def hangedman(hangman):
     ,
     """
     +-------------+
-	 |/      |
+     |/      |
      |      (_)
      |       |
      |       
@@ -52,7 +52,7 @@ def hangedman(hangman):
     ,
     """
     +-------------+
-	 |/      |
+     |/      |
      |      (_)
      |      \|
      |       
@@ -63,7 +63,7 @@ def hangedman(hangman):
     ,
     """
     +-------------+
-	 |/      |
+     |/      |
      |      (_)
      |      \|/
      |       
@@ -74,7 +74,7 @@ def hangedman(hangman):
     ,
     """
     +-------------+
-	 |/      |
+     |/      |
      |      (_)
      |      \|/
      |       
@@ -85,7 +85,7 @@ def hangedman(hangman):
     ,
     """
     +-------------+
-	 |/      |
+     |/      |
      |      (_)
      |      \|/
      |       |
@@ -96,7 +96,7 @@ def hangedman(hangman):
     ,
     """
     +-------------+
-	 |/      |
+     |/      |
      |      (_)
      |      \|/
      |       |
@@ -107,7 +107,7 @@ def hangedman(hangman):
     ,
     """
     +-------------+
-	 |/      |
+     |/      |
      |      (_)
      |      \|/
      |       |
@@ -116,6 +116,8 @@ def hangedman(hangman):
     ================
 	"""
 	]
+	print (graphic[hangman])
+	return
 
 def start():
 	print ("Lets play a game of Hangman.")
@@ -124,46 +126,51 @@ def start():
 	scores()
 
 def game():
-	dictionary = ["hat","capital","rainbow","building","house","snake"]
+	dictionary = ["hat","capital","rainbow","penguin","house","snake"]
 	word = choice(dictionary)
 	word_length = len(word)
 	clue = word_length * ["_"]
 	tries = 6
-	letters_triied = ""
+	letters_tried = ""
 	guesses = 0
 	letters_right = 0
 	letters_wrong = 0
 	global computer_score, player_score
 
-	while (letter_wrong != tries) and ("".join(clue) != word):
+	while (letters_wrong != tries) and ("".join(clue) != word):
 		letter = guess_letter()
 		if len(letter) == 1 and letter.isalpha():
-			if letter_tried.find(letter) != -1:
+			if letters_tried.find(letter) != -1:
 				print ("You've already picked ", letter)
 			else:
-				letter_tried = letter_tried + letter
+				letters_tried = letters_tried + letter
 				first_index = word.find(letter)
 				if first_index == -1:
-					letter_wrong += 1
-					print (“Sorry,”,letter,”isn’t what we’re looking for.”)
+					letters_wrong += 1
+					print ("Sorry,",letter,"isn’t what we’re looking for.")
 				else:
-					print (”Congratulations,”,letter,”is correct.”)
+					print ("Congratulations,",letter,"is correct.")
 					for i in range(word_length):
 						if letter == word[i]:
 							clue[i] = letter
-			else:
-				print ("Choose another.")
+		else:
+			print ("Choose another.")
 
-			hangedman(letters_wrong)
-			print (" ").join(clue)
-			print ("Guesses: ", letters_tried)
+		hangedman(letters_wrong)
+		print (" ".join(clue))
+		print ("Guesses: ", letters_tried)
 
-			if letters_wrong == tries:
-				print ("Game Over.")
-				print ("The word was ", word)
-				computer_score += 1
-				break
-		return play_again()
+		if letters_wrong == tries:
+			print ("Game Over.")
+			print ("The word was ", word)
+			computer_score += 1
+			break
+		if "".join(clue) == word:
+			print ("You win!")
+			print ("The word was ", word)
+			player_score += 1
+			break
+	return play_again()
 
 def guess_letter():
 	print ()
@@ -186,7 +193,7 @@ def scores():
 	print ("Player: ", player_score)
 	print ("Computer: ", computer_score)
 
-	if __name__ == '__main__':
+if __name__ == '__main__':
 		start()
 
 
