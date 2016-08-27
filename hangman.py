@@ -123,5 +123,47 @@ def start():
 		pass
 	scores()
 
+def game():
+	dictionary = ["hat","capital","rainbow","building","house","snake"]
+	word = choice(dictionary)
+	word_length = len(word)
+	clue = word_length * ["_"]
+	tries = 6
+	letters_triied = ""
+	guesses = 0
+	letters_right = 0
+	letters_wrong = 0
+	global computer_score, player_score
+
+	while (letter_wrong != tries) and ("".join(clue) != word):
+		letter = guess_letter()
+		if len(letter) == 1 and letter.isalpha():
+			if letter_tried.find(letter) != -1:
+				print ("You've already picked ", letter)
+			else:
+				letter_tried = letter_tried + letter
+				first_index = word.find(letter)
+				if first_index == -1:
+					letter_wrong += 1
+					print (“Sorry,”,letter,”isn’t what we’re looking for.”)
+				else:
+					print (”Congratulations,”,letter,”is correct.”)
+					for i in range(word_length):
+						if letter == word[i]:
+							clue[i] = letter
+			else:
+				print ("Choose another.")
+
+			hangedman(letters_wrong)
+			print (" ").join(clue)
+			print ("Guesses: ", letters_tried)
+
+			if letters_wrong == tries:
+				print ("Game Over.")
+				print ("The word was ", word)
+				computer_score += 1
+				break
+		return play_again()
+
 
 
