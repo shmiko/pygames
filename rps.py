@@ -26,7 +26,7 @@ def game():
 
 def move():
 	while True:
-		print
+		print ()
 		player = raw_input("Rock = 1\nPaper = 2\nScissors = 3\nMake a move: ")
 		try:
 			player = int(player)
@@ -34,7 +34,7 @@ def move():
 				return player
 		except ValueError:
 			pass
-		print "Oops! I didn't understand that. Please enter 1,2 or 3."
+		print ("Oops! I didn't understand that. Please enter 1,2 or 3.")
 
 def result(player,computer):
 	print ("1...")
