@@ -130,7 +130,7 @@ def game():
 	word = choice(dictionary)
 	word_length = len(word)
 	clue = word_length * ["_"]
-	tries = 6
+	tries = 8
 	letters_tried = ""
 	guesses = 0
 	letters_right = 0
@@ -174,7 +174,7 @@ def game():
 
 def guess_letter():
 	print ()
-	letter = input("Take a guess at our mystery word:")
+	letter = input("Take a guess at our mystery word - choose a letter:")
 	letter.strip()
 	letter.lower()
 	print ()
