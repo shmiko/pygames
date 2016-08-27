@@ -12,6 +12,8 @@
 #!/usr/local/Cellar/python3/3.5.1/Frameworks/Python.framework/Versions/3.5/lib/python3.5 python3
 from random import *
 
+player_score = 0
+computer_score = 0
 
 def hangedman(hangman):
 	graphic = [
@@ -114,3 +116,12 @@ def hangedman(hangman):
     ================
 	"""
 	]
+
+def start():
+	print ("Lets play a game of Hangman.")
+	while game():
+		pass
+	scores()
+
+
+
