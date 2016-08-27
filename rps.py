@@ -41,9 +41,9 @@ def result(player,computer):
 	time.sleep(1)
 	print ("2...")
 	time.sleep(1)
-	print ("3...")
+	print ("3!")
 	time.sleep(0.5)
-	print ("Computer threw {0}!".format(names[computer]))
+	print ("Computer threw {0}!").format(names[computer])
 	global player_score, computer_score
 	if player == computer:
 		print ("Tie game.")
@@ -65,8 +65,8 @@ def play_again():
 def scores():
 	global player_score, computer_score
 	print ("HIGH SCORES")
-	print ("Player: ", player_score)
-	print ("Computer: ", computer_score)
+	print ("Player: "), player_score
+	print ("Computer: "), computer_score
 
 if __name__ == '__main__':
 	start()
