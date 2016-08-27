@@ -165,5 +165,30 @@ def game():
 				break
 		return play_again()
 
+def guess_letter():
+	print ()
+	letter = input("Take a guess at our mystery word:")
+	letter.strip()
+	letter.lower()
+	print ()
+	return letter
+
+def play_again():
+	answer = input("Would you like to play again? y/n: ")
+	if answer in ("y", "Y", "Yes", "yes", "Of course"):
+		return answer
+	else:
+		print ("Thanks for playing!")
+
+def scores():
+	global player_score, computer_score
+	print ("HIGH SCORES")
+	print ("Player: ", player_score)
+	print ("Computer: ", computer_score)
+
+	if __name__ == '__main__':
+		start()
+
+
 
 
