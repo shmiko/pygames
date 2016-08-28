@@ -23,7 +23,7 @@ words = ('ant baboon badger bat bear beaver camel cat clam cobra cougar '
          'rhino salmon seal shark sheep skunk sloth snake spider '
          'stork swan tiger toad trout turkey turtle weasel whale wolf '
          'wombat zebra ').split()
-print ('words are', words)
+'''print ('words are', words)'''
 
 hints = ['very small insect',' african animal ','american ground animal',' sonar animal ','giant of US parks',' beaver',' desert humps',' dometic animal ','hide the pearls ','king spitter ','rare forest dweller',' '
          'desert howler ','black bird ',' a rain...','mans best friend ','not a horse ','duck ','soaring in the sky ','ferret ','sly animal ','not a toad',' farmed for milk ',''
@@ -113,6 +113,7 @@ def game():
 	word = choice(words)
 	word_length = len(word)
 	hint = choice(word)
+	hint2 = choice(word)
 	clue = word_length * ["_"]
 	word_index = words.index(word)
 	tries = 7
@@ -122,6 +123,7 @@ def game():
 	letters_wrong = 0
 	asked = 0
 	global computer_score, player_score
+	print ("***** START *****")
 	print ("Your word is",word_length,"letters in length!") 
 	print (" ".join(clue))
 
@@ -143,25 +145,35 @@ def game():
 					for i in range(word_length):
 						if letter == word[i]:
 							clue[i] = letter
+
+			if (len(letters_tried) == 3) and (asked != 1):
+				ask = input("Do you want a hint: y/n")
+				if ask in ("y", "Y", "Yes", "yes", "Of course"):
+					asked = 1
+					print ("Your hint is ", "'",hints[word_index],"'")
+			if (len(letters_tried) == 5) and ((asked != 2) or (asked != 1)):
+				ask = input("Do you want a hint: y/n")
+				if ask in ("y", "Y", "Yes", "yes", "Of course"):
+					asked = 2
+					if hint != letter:
+						print ("Your hint is letter ", hint)
+						for i in range(word_length):
+							if hint == word[i]:
+								clue[i] = hint
+					else:
+						print ("Your hint is letter ", hint2)
+						for i in range(word_length):
+							if hint2 == word[i]:
+								clue[i] = hint2
+
 		else:
 			print ("Choose another.")
 
 		hangingman(letters_wrong)
 		print (" ".join(clue))
-		print ("You have had ",len(letters_tried)," guesses - They are: ", letters_tried)
-		if (len(letters_tried) == 3) and (asked != 1):
-			ask = input("Do you want a hint: y/n")
-			if ask in ("y", "Y", "Yes", "yes", "Of course"):
-				asked = 1
-				print ("Your hint is ", "'",hints[word_index],"'")
-		if (len(letters_tried) == 5) and ((asked != 2) or (asked != 1)):
-			ask = input("Do you want a hint: y/n")
-			if ask in ("y", "Y", "Yes", "yes", "Of course"):
-				asked = 2
-				print ("Your hint is letter ", hint)
-				for i in range(word_length):
-					if hint == word[i]:
-						clue[i] = hint
+		if (len(letters_tried) > 0):
+			print ("You have had ",len(letters_tried)," guesses - They are: ", letters_tried)
+		
 
 		if letters_wrong == tries:
 			'''hangingman(letters_wrong + 1)'''
