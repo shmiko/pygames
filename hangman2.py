@@ -121,7 +121,6 @@ def game():
 	guesses = 0
 	letters_right = 0
 	letters_wrong = 0
-	asked = 0
 	global computer_score, player_score
 	print ("***** START *****")
 	print ("Your word is",word_length,"letters in length!") 
@@ -171,6 +170,7 @@ def game():
 	return play_again()
 
 def get_hint(letters_tried,hint):
+	asked = 0
 	if (len(letters_tried) == 3) and (asked != 1):
 		ask = input("Do you want a hint: y/n")
 		if ask in ("y", "Y", "Yes", "yes", "Of course"):
