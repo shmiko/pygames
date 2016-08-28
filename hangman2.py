@@ -146,25 +146,7 @@ def game():
 						if letter == word[i]:
 							clue[i] = letter
 
-			if (len(letters_tried) == 3) and (asked != 1):
-				ask = input("Do you want a hint: y/n")
-				if ask in ("y", "Y", "Yes", "yes", "Of course"):
-					asked = 1
-					print ("Your hint is ", "'",hints[word_index],"'")
-			if (len(letters_tried) == 5) and ((asked != 2) or (asked != 1)):
-				ask = input("Do you want a hint: y/n")
-				if ask in ("y", "Y", "Yes", "yes", "Of course"):
-					asked = 2
-					if hint != letter:
-						print ("Your hint is letter ", hint)
-						for i in range(word_length):
-							if hint == word[i]:
-								clue[i] = hint
-					else:
-						print ("Your hint2 is letter ", hint2)
-						for i in range(word_length):
-							if hint2 == word[i]:
-								clue[i] = hint2
+			get_hint()					
 
 		else:
 			print ("Choose another.")
@@ -187,6 +169,27 @@ def game():
 			player_score += 1
 			break
 	return play_again()
+
+def get_hint():
+	if (len(letters_tried) == 3) and (asked != 1):
+		ask = input("Do you want a hint: y/n")
+		if ask in ("y", "Y", "Yes", "yes", "Of course"):
+			asked = 1
+			print ("Your hint is ", "'",hints[word_index],"'")
+	if (len(letters_tried) == 5) and ((asked != 2) or (asked != 1)):
+		ask = input("Do you want a hint: y/n")
+		if ask in ("y", "Y", "Yes", "yes", "Of course"):
+			asked = 2
+			if hint != letter:
+				print ("Your hint is letter ", hint)
+				for i in range(word_length):
+					if hint == word[i]:
+						clue[i] = hint
+			else:
+				print ("Your hint2 is letter ", hint2)
+				for i in range(word_length):
+					if hint2 == word[i]:
+						clue[i] = hint2
 
 def guess_letter():
 	print ()
