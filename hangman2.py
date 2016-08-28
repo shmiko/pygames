@@ -101,14 +101,7 @@ def hangingman(hangman):
 	print (HANGMANPICS[hangman])
 	return
 
-def start():
-	print ("Lets play a game of Hangman.")
-	while game():
-		pass
-	scores()
-
-
-def game():
+def init():
 	dictionary = ["hat","capital","rainbow","penguin","house","snake"]
 	word = choice(words)
 	word_length = len(word)
@@ -122,6 +115,16 @@ def game():
 	letters_right = 0
 	letters_wrong = 0
 	global computer_score, player_score
+
+def start():
+	init()
+	print ("Lets play a game of Hangman.")
+	while game():
+		pass
+	scores()
+
+
+def game():
 	print ("***** START *****")
 	print ("Your word is",word_length,"letters in length!") 
 	print (" ".join(clue))
