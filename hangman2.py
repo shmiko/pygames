@@ -170,7 +170,7 @@ def game():
 			break
 	return play_again()
 
-def get_hint():
+def get_hint(self):
 	if (len(letters_tried) == 3) and (asked != 1):
 		ask = input("Do you want a hint: y/n")
 		if ask in ("y", "Y", "Yes", "yes", "Of course"):
