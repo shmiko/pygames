@@ -145,7 +145,7 @@ def game():
 						if letter == word[i]:
 							clue[i] = letter
 
-			get_hint(letters_tried,hint,word_index,letter,word_length,word,clue)					
+			get_hint(letters_tried,hint,word_index,letter,word_length,word,clue,hint2)					
 
 		else:
 			print ("Choose another.")
@@ -169,7 +169,7 @@ def game():
 			break
 	return play_again()
 
-def get_hint(letters_tried,hint,word_index,letter,word_length,word,clue):
+def get_hint(letters_tried,hint,word_index,letter,word_length,word,clue,hint2):
 	asked = 0
 	if (len(letters_tried) == 3) and (asked != 1):
 		ask = input("Do you want a hint: y/n")
@@ -180,14 +180,14 @@ def get_hint(letters_tried,hint,word_index,letter,word_length,word,clue):
 		ask = input("Do you want a hint: y/n")
 		if ask in ("y", "Y", "Yes", "yes", "Of course"):
 			asked = 2
-			if (hint != letter) and (letters_tried.find(letter) != -1):
+			if (hint != letter) and (letters_tried.find(letter) == -1):
 				print ("Your hint is letter ", hint, "and letter was ", letter)
 				for i in range(word_length):
 					if hint == word[i]:
 						clue[i] = hint
 			else:
 				if letters_tried.find(letter) != -1:
-					print ("Your hint2 is letter ", hint2)
+					print ("Your hint2 is letter ", hint2, "and letter was ", letter," hint 1 was", hint)
 					for i in range(word_length):
 						if hint2 == word[i]:
 							clue[i] = hint2
