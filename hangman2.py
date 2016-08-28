@@ -101,19 +101,19 @@ def hangingman(hangman):
 	print (HANGMANPICS[hangman])
 	return
 
-def init():
+def init(words):
 	dictionary = ["hat","capital","rainbow","penguin","house","snake"]
-	word = choice(words)
-	word_length = len(word)
-	hint = choice(word)
-	hint2 = choice(word)
-	clue = word_length * ["_"]
-	word_index = words.index(word)
-	tries = 7
-	letters_tried = ""
-	guesses = 0
-	letters_right = 0
-	letters_wrong = 0
+	self.word = choice(words)
+	self.word_length = len(word)
+	self.hint = choice(word)
+	self.hint2 = choice(word)
+	self.clue = word_length * ["_"]
+	self.word_index = words.index(word)
+	self.tries = 7
+	self.letters_tried = ""
+	self.guesses = 0
+	self.letters_right = 0
+	self.letters_wrong = 0
 	global computer_score, player_score
 
 def start():
