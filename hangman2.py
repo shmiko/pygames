@@ -180,16 +180,17 @@ def get_hint(letters_tried,hint,word_index,letter,word_length,word,clue):
 		ask = input("Do you want a hint: y/n")
 		if ask in ("y", "Y", "Yes", "yes", "Of course"):
 			asked = 2
-			if hint != letter:
+			if (hint != letter) and (letters_tried.find(letter) != -1):
 				print ("Your hint is letter ", hint, "and letter was ", letter)
 				for i in range(word_length):
 					if hint == word[i]:
 						clue[i] = hint
 			else:
-				print ("Your hint2 is letter ", hint2)
-				for i in range(word_length):
-					if hint2 == word[i]:
-						clue[i] = hint2
+				if letters_tried.find(letter) != -1:
+					print ("Your hint2 is letter ", hint2)
+					for i in range(word_length):
+						if hint2 == word[i]:
+							clue[i] = hint2
 
 def guess_letter():
 	print ()
