@@ -14,10 +14,79 @@ from random import *
 
 player_score = 0
 computer_score = 0
+bDebugging = True
+
+def hangingman(hangman):
+	HANGMANPICS = ['''
+	  +---+
+	  |   |
+	      |
+	      |
+	      |
+	      |
+	=========''', '''
+	  +---+
+	  |   |
+	  O   |
+	      |
+	      |
+	      |
+	=========''', '''
+	  +---+
+	  |   |
+	  O   |
+	  |   |
+	      |
+	      |
+	=========''', '''
+	  +---+
+	  |   |
+	  O   |
+	 /|   |
+	      |
+	      |
+	=========''', '''
+	  +---+
+	  |   |
+	  O   |
+	 /|\  |
+	      |
+	      |
+	=========''', '''
+	  +---+
+	  |   |
+	  O   |
+	 /|\  |
+	 /    |
+	      |
+	=========''', '''
+	  +---+
+	  |   |
+	  O   |
+	 /|\  |
+	 / \  |
+	      |
+	=========''', '''
+	  +---+
+	      |
+	      |
+	  O   |
+	 /|\  |
+	 / \  |
+	=========''', '''
+	  +---+
+	      |
+              |
+              |
+         \__/ |
+         / / 0|
+	=========''']
+	print (HANGMANPICS[hangman])
+	return
 
 def hangedman(hangman):
 	graphic = [
-	"""
+	'''
 +-------------+
      |/      |
      |      
@@ -26,9 +95,7 @@ def hangedman(hangman):
      |      
      |
     ===============
-    """
-    ,
-    """
+    ''', '''
     +-------------+
      |/      |
      |      (_)
@@ -37,9 +104,7 @@ def hangedman(hangman):
      |      
      |
     ===============
-    """
-    ,
-    """
+    ''', '''
     +-------------+
      |/      |
      |      (_)
@@ -48,9 +113,7 @@ def hangedman(hangman):
      |      
      |
     ===============
-    """
-    ,
-    """
+    ''', '''
     +-------------+
      |/      |
      |      (_)
@@ -59,9 +122,7 @@ def hangedman(hangman):
      |      
      |
     ===============
-    """
-    ,
-    """
+    ''', '''
     +-------------+
      |/      |
      |      (_)
@@ -70,20 +131,7 @@ def hangedman(hangman):
      |      
      |
     ===============
-    """
-    ,
-    """
-    +-------------+
-     |/      |
-     |      (_)
-     |      \|/
-     |       
-     |      
-     |
-    ===============
-    """
-    ,
-    """
+    ''', '''
     +-------------+
      |/      |
      |      (_)
@@ -92,55 +140,45 @@ def hangedman(hangman):
      |      
      |
     ===============
-    """
-    ,
-    """
+    ''', '''
     +-------------+
      |/      |
      |      (_)
      |      \|/
      |       |
-     |      / 
-     |       
+     |      /
+     |
+     |
+     |
     ===============
-    """
-    ,
-    """
+    ''', '''
     +-------------+
      |/      |
      |      (_)
      |      \|/
      |       |
      |      / \
-     |       
-    ================
-	"""    
-	,
-    """
+     |
+    ===============
+    ''', '''
     +-------------+
      |/      |
      |      (_)
-     |        
-     |        |/
-     |        /\
+     |      \|/
+     |       |
      |      / \
-    ================
-	"""
-	,
-    """
+     |
+    ===============
+    ''', '''
     +-------------+
      |/      |
+     |
      |      (_)
-     |       
-     |                
-     |      \ __/_
-     |      /   \
-    ================
-	"""
-	,
-	"""
-	DONE
-	"""
+     |      \|/
+     |       |
+     |      / \
+    ===============
+    '''
 	]
 	print (graphic[hangman])
 	return
@@ -157,7 +195,7 @@ def game():
 	word_length = len(word)
 	hint = choice(word)
 	clue = word_length * ["_"]
-	tries = word_length
+	tries = 7
 	letters_tried = ""
 	guesses = 0
 	letters_right = 0
@@ -168,6 +206,8 @@ def game():
 	print (" ".join(clue))
 
 	while (letters_wrong != tries) and ("".join(clue) != word):
+		if (bDebugging):
+			print ("Debugging--- tries is", tries, "and the len of letters_wrong is", letters_wrong)
 		letter = guess_letter()
 		if len(letter) == 1 and letter.isalpha():
 			if letters_tried.find(letter) != -1:
@@ -177,19 +217,16 @@ def game():
 				first_index = word.find(letter)
 				if first_index == -1:
 					letters_wrong += 1
-					tries += 1
 					print ("Sorry,",letter,"isn’t what we’re looking for.")
 				else:
 					print ("Congratulations,",letter,"is correct.")
-					tries += 1
 					for i in range(word_length):
 						if letter == word[i]:
 							clue[i] = letter
 		else:
-			tries += 1
 			print ("Choose another.")
 
-		hangedman(letters_wrong)
+		hangingman(letters_wrong)
 		print (" ".join(clue))
 		print ("You have had ",len(letters_tried)," guesses - They are: ", letters_tried)
 		if (len(letters_tried) == 3) and (asked != 1):
@@ -199,6 +236,7 @@ def game():
 				print ("Your hint is letter ", hint)
 
 		if letters_wrong == tries:
+			'''hangingman(letters_wrong + 1)'''
 			print ("Game Over.")
 			print ("The word was ", word)
 			computer_score += 1
@@ -227,6 +265,7 @@ def play_again():
 
 def scores():
 	global player_score, computer_score
+	hangingman(8)
 	print ("HIGH SCORES")
 	print ("Player: ", player_score)
 	print ("Computer: ", computer_score)
