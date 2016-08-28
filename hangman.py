@@ -101,7 +101,7 @@ def hangedman(hangman):
      |      \|/
      |       |
      |      / 
-     |
+     |       
     ===============
     """
     ,
@@ -112,8 +112,34 @@ def hangedman(hangman):
      |      \|/
      |       |
      |      / \
-     |
+     |       
     ================
+	"""    
+	,
+    """
+    +-------------+
+     |/      |
+     |      (_)
+     |        
+     |        |/
+     |        /\
+     |      / \
+    ================
+	"""
+	,
+    """
+    +-------------+
+     |/      |
+     |      (_)
+     |       
+     |                
+     |      \ __/_
+     |      /   \
+    ================
+	"""
+	,
+	"""
+	DONE
 	"""
 	]
 	print (graphic[hangman])
@@ -131,14 +157,14 @@ def game():
 	word_length = len(word)
 	hint = choice(word)
 	clue = word_length * ["_"]
-	tries = 8
+	tries = word_length
 	letters_tried = ""
 	guesses = 0
 	letters_right = 0
 	letters_wrong = 0
 	asked = 0
 	global computer_score, player_score
-	print ("Your word is ",word_length,"letters long!") 
+	print ("Your word is",word_length,"letters in length!") 
 	print (" ".join(clue))
 
 	while (letters_wrong != tries) and ("".join(clue) != word):
@@ -165,10 +191,10 @@ def game():
 
 		hangedman(letters_wrong)
 		print (" ".join(clue))
-		print ("Guesses: ", letters_tried)
-		if (len(letters_tried) == 3) and (asked == 0):
+		print ("You have had ",len(letters_tried)," guesses - They are: ", letters_tried)
+		if (len(letters_tried) == 3) and (asked != 1):
 			ask = input("Do you want a hint: y/n")
-			if ask:
+			if ask in ("y", "Y", "Yes", "yes", "Of course"):
 				asked = 1
 				print ("Your hint is letter ", hint)
 
