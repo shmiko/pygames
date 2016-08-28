@@ -43,7 +43,7 @@ def gui():
 	def result(player, computer): 
 		new_score = 0
 		if player == computer: 
-			result_set.set(“Tie game.”)
+			result_set.set("Tie game.")
 		else:
 			if rules[player] == computer:
 				result_set.set("Your victory has been assured.") 
@@ -57,7 +57,7 @@ def gui():
 				computer_score.set(new_score)
 
 	rps_window = Toplevel()
-	rps_window.title (“Rock, Paper, Scissors”)
+	rps_window.title ("Rock, Paper, Scissors")
 
 	player_choice = IntVar() 
 	computer_choice = StringVar()
