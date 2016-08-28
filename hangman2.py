@@ -146,7 +146,7 @@ def game():
 						if letter == word[i]:
 							clue[i] = letter
 
-			get_hint()					
+			get_hint(letters_tried,hint)					
 
 		else:
 			print ("Choose another.")
@@ -170,7 +170,7 @@ def game():
 			break
 	return play_again()
 
-def get_hint(self):
+def get_hint(letters_tried,hint):
 	if (len(letters_tried) == 3) and (asked != 1):
 		ask = input("Do you want a hint: y/n")
 		if ask in ("y", "Y", "Yes", "yes", "Of course"):
