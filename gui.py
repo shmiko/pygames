@@ -18,8 +18,8 @@ intro.pack(side = TOP)
 rps_button = Button(mainframe, text = "Rock, Paper, Scissors", command = rockpaperscissors.gui)
 rps_button.pack()
 
-hm_button = Button(mainframe, text = "Hangman", command = hangman.start) 
-hm_button.pack()
+'''hm_button = Button(mainframe, text = "Hangman", command = hangman.start) 
+hm_button.pack()'''
 
 exit_button = Button(mainframe, text = "Quit", command = root.destroy) 
 exit_button.pack(side = BOTTOM)
