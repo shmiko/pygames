@@ -101,7 +101,7 @@ def hangingman(hangman):
 	print (HANGMANPICS[hangman])
 	return
 
-def init(words):
+def init(self,words):
 	dictionary = ["hat","capital","rainbow","penguin","house","snake"]
 	self.word = choice(words)
 	self.word_length = len(word)
@@ -117,7 +117,7 @@ def init(words):
 	global computer_score, player_score
 
 def start():
-	init()
+	'''init()'''
 	print ("Lets play a game of Hangman.")
 	while game():
 		pass
