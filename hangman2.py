@@ -101,23 +101,7 @@ def hangingman(hangman):
 	print (HANGMANPICS[hangman])
 	return
 
-def init(self,words):
-	dictionary = ["hat","capital","rainbow","penguin","house","snake"]
-	self.word = choice(words)
-	self.word_length = len(word)
-	self.hint = choice(word)
-	self.hint2 = choice(word)
-	self.clue = word_length * ["_"]
-	self.word_index = words.index(word)
-	self.tries = 7
-	self.letters_tried = ""
-	self.guesses = 0
-	self.letters_right = 0
-	self.letters_wrong = 0
-	global computer_score, player_score
-
 def start():
-	'''init()'''
 	print ("Lets play a game of Hangman.")
 	while game():
 		pass
@@ -125,6 +109,19 @@ def start():
 
 
 def game():
+	dictionary = ["hat","capital","rainbow","penguin","house","snake"]
+	word = choice(words)
+	word_length = len(word)
+	hint = choice(word)
+	hint2 = choice(word)
+	clue = word_length * ["_"]
+	word_index = words.index(word)
+	tries = 7
+	letters_tried = ""
+	guesses = 0
+	letters_right = 0
+	letters_wrong = 0
+	global computer_score, player_score
 	print ("***** START *****")
 	print ("Your word is",word_length,"letters in length!") 
 	print (" ".join(clue))
@@ -148,7 +145,7 @@ def game():
 						if letter == word[i]:
 							clue[i] = letter
 
-			get_hint(letters_tried,hint)					
+			get_hint(letters_tried,hint,word_index,letter,word_length,word,clue)					
 
 		else:
 			print ("Choose another.")
@@ -172,7 +169,7 @@ def game():
 			break
 	return play_again()
 
-def get_hint(letters_tried,hint):
+def get_hint(letters_tried,hint,word_index,letter,word_length,word,clue):
 	asked = 0
 	if (len(letters_tried) == 3) and (asked != 1):
 		ask = input("Do you want a hint: y/n")
@@ -184,7 +181,7 @@ def get_hint(letters_tried,hint):
 		if ask in ("y", "Y", "Yes", "yes", "Of course"):
 			asked = 2
 			if hint != letter:
-				print ("Your hint is letter ", hint)
+				print ("Your hint is letter ", hint, "and letter was ", letter)
 				for i in range(word_length):
 					if hint == word[i]:
 						clue[i] = hint
