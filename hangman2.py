@@ -161,7 +161,7 @@ def game():
 							if hint == word[i]:
 								clue[i] = hint
 					else:
-						print ("Your hint is letter ", hint2)
+						print ("Your hint2 is letter ", hint2)
 						for i in range(word_length):
 							if hint2 == word[i]:
 								clue[i] = hint2
