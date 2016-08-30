@@ -30,7 +30,7 @@ hints = [' very small insect',' african animal ',' american ground animal',' son
          ' big water bird ',' high flyer good sight',' not a tiger ',' not a snake ','another word for alpaca ',' blind ground dweller ','monafrican primatekey ','big horns ','quiet as a ... ','use to go down the grand canyon ','eye of ... ',''
          ' water animal ',' night big eyed animal ',' chinese rare animal ',' colorful bird ',' common park bird ','long and slipery ','down a hole ','like a sheep ','bigger than a mouse',' black brid',' '
          ' african horned anaimal ',' upstream swimmer ',' water animal trickster ','danger in the water ',' farm animal ','smelly animal',' 4 toed ','long and slipery',' arachnid ',''
-         ' baby carrier ',' graceful water bird ',' not a lion ',' not a frog ',' colorful fish ',' not a chicken ','tripical swimmer ','sly long and thin ','big fish ','night howler '
+         ' baby carrier ',' graceful water bird ',' not a lion ',' not a frog ',' colorful fish ',' not a chicken ','tropical swimmer ','sly long and thin ','big fish ','night howler '
          ' australian nocturnal ',' striped animal ']
 
 def hangingman(hangman):
