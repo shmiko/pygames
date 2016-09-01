@@ -28,7 +28,7 @@ words = ('ant baboon badger bat bear beaver camel cat clam cobra cougar '
 hints = [' very small insect',' african animal ',' american ground animal',' sonar animal ',' giant of US parks',' live in the water and builds dams',' desert humps',' dometic animal ',' hide the pearls ',' king spitter ',' rare forest dweller',' '
          ' desert howler ',' black bird ',' a rain...','mans best friend ',' not a horse ',' not a swan ','soaring in the sky ',' like a weasel ','sly animal ','not a toad',' farmed for milk ',''
          ' big water bird ',' high flyer good sight',' not a tiger ',' not a snake ','another word for alpaca ',' blind ground dweller ',' monafrican primatekey ','big horns ',' quiet as a ... ',' use to go down the grand canyon ',' eye of ... ',''
-         ' water animal ',' night big eyed animal ',' chinese rare animal ',' colorful bird ',' common park bird ','long and slipery ',' down a hole ','like a sheep ',' bigger than a mouse',' black brid',' '
+         ' water animal ',' night big eyed animal ',' chinese rare animal ',' colorful bird ',' common park bird ','long and slipery ',' down a hole ','like a sheep ',' bigger than a mouse',' black bird',' '
          ' african horned anaimal ',' upstream swimmer ',' water animal trickster ','danger in the water ',' farm animal ',' smelly animal',' 4 toed ','long and slipery',' arachnid ',''
          ' baby carrier ',' graceful water bird ',' not a lion ',' not a frog ',' colorful fish ',' not a chicken ','tropical swimmer ','sly long and thin ',' big fish ',' night howler '
          ' australian nocturnal ',' striped animal ']
