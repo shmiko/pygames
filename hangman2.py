@@ -22,7 +22,7 @@ words = ('ant baboon badger bat bear beaver camel cat clam cobra cougar '
          'otter owl panda parrot pigeon python rabbit ram rat raven '
          'rhino salmon seal shark sheep skunk sloth snake spider '
          'stork swan tiger toad trout turkey turtle weasel whale wolf '
-         'wombat zebra ').split()
+         'wombat zebra peacock').split()
 '''print ('words are', words)'''
 
 hints = [' very small insect',' african animal ',' american ground animal',' sonar animal ',' giant of US parks',' live in the water and builds dams',' desert humps',' dometic animal ',' hide the pearls ',' king spitter ',' rare forest dweller ',' '
@@ -31,7 +31,7 @@ hints = [' very small insect',' african animal ',' american ground animal',' son
          ' water animal ',' night big eyed animal ',' chinese rare animal ',' colorful bird ',' common park bird ',' long and slipery ',' down a hole ',' like a sheep ',' bigger than a mouse',' black bird',' '
          ' african horned anaimal ',' upstream swimmer ',' water animal trickster ',' danger in the water ',' farm animal ',' smelly animal',' 4 toed ','long and slipery',' arachnid ',''
          ' baby carrier ',' graceful water bird ',' not a lion ',' not a frog ',' colorful fish ',' not a chicken ',' tropical swimmer ',' sly long and thin ',' big fish ',' night howler '
-         ' australian nocturnal ',' striped animal ']
+         ' australian nocturnal ',' striped animal ', ' big feathers ']
 
 def hangingman(hangman):
 	HANGMANPICS = ['''
