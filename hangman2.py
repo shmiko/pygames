@@ -31,7 +31,7 @@ hints = [' very small insect',' african animal ',' american ground animal',' son
          ' water animal ',' night big eyed animal ',' chinese rare animal ',' colorful bird ',' common park bird ',' long and slipery ',' down a hole ',' like a sheep ',' bigger than a mouse',' black bird',' '
          ' african horned anaimal ',' upstream swimmer ',' water animal trickster ',' danger in the water ',' farm animal ',' smelly animal',' 4 toed ','long and slipery',' arachnid ',''
          ' baby carrier ',' graceful water bird ',' not a lion ',' not a frog ',' colorful fish ',' not a chicken ',' tropical swimmer ',' sly long and thin ',' big fish ',' night howler '
-         ' australian nocturnal ',' striped animal ', ' big feathers ']
+         ' australian nocturnal ',' striped animal ', ' big coloured feathers ']
 
 def hangingman(hangman):
 	HANGMANPICS = ['''
