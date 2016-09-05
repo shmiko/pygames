@@ -102,6 +102,7 @@ def hangingman(hangman):
 	print (HANGMANPICS[hangman])
 	return
 
+
 def start():
 	print ("Lets play a game of Hangman.")
 	while game():
